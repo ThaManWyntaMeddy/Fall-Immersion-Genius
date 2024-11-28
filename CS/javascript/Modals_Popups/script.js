@@ -1,23 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Get modal elements
-    const modal = document.getElementById("myModal");
-    const openModalButton = document.getElementById("openModal");
-    const closeModalButton = document.getElementById("closeModal");
+    // Get modal element 
+    const modal= document.getElementById("myModal");
+    
+    // Get Buttons
+    const alertBtn = document.getElementById("alertBtn");
+    const openModalButton = document.getElementById("openModalBtn");
+    const closeModalButton = document.getElementById("closeModalBtn");
+    
 
-    // Event listener to open modal
-    openModalButton.addEventListener("click", () => {
+    // Open modal on button click
+    openModalBtn.onclick = function() {
         modal.style.display = "block";
-    });
+    }
 
-    // Event listener to close modal when clicking on the 'X' button
-    closeModalButton.addEventListener("click", () => {
+    // Close modal on close button click
+    closeModalBtn.onclick = function() {
         modal.style.display = "none";
-    });
+    }
 
-    // Event listener to close modal when clicking outside the modal content
-    window.addEventListener("click", (event) => {
-        if (event.target == modal) {
+    // Close modal on outside click
+    window.onclick = function(event) {
+        if (event.target === modal) {
             modal.style.display = "none";
         }
-    });
-});
+    }
+
+    //Show alert on button click
+    alertBtn.onclick = function() {
+        alert("This is a simple alert")
+    }
